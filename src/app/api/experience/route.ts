@@ -27,6 +27,12 @@ export async function POST(req:Request,res:Response){
       highlights,
       included,
     } = await req.json();
+
+    if(!title || !description || !location || !price || !image || !category || !duration)
+    {
+      return NextResponse.json({error:"Missing Req Fields"},{status:400})
+    }
+
     const experience = await prisma.experience.create({
       data: {
         title,
@@ -47,6 +53,7 @@ export async function POST(req:Request,res:Response){
 
     }catch(error)
     {
+      console.log(error)
             return NextResponse.json({ error: "Failed to create experience" }, { status: 500 });
     }
 }
