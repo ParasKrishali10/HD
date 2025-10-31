@@ -61,7 +61,7 @@ Data dynamically fetched and stored:
 |-----------|-------------|
 | **Frontend** | Next.js 14, TypeScript, Tailwind CSS |
 | **Backend** | Node.js (Next.js API routes) |
-| **Database** | MongoDB |
+| **Database** | PostgreSql |
 | **Deployment** | Vercel |
 | **Version Control** | Git + GitHub |
 
@@ -90,7 +90,7 @@ cd bookit
     env
     Copy code
     DATABASE_URL=your_postgress_db_url
-    NEXT_PUBLIC_API_URL=http://localhost:3000
+  
 
 4️⃣ Run the Project
 
@@ -102,7 +102,7 @@ cd bookit
 🌐 Deployment
 
     The project is hosted live on Vercel for seamless performance and zero-config deployment.
-    🔗 Live Link: https://bookit.vercel.app
+    🔗 Live Link: [https://bookit.vercel.app](https://hd-qfiq.vercel.app/)
 
 🧮 Folder Structure
 
