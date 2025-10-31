@@ -1,36 +1,158 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🌍 BookIt — Experiences & Slots
 
-## Getting Started
+A **full-stack travel booking application** where users can explore exciting travel experiences, view available slots, and make seamless bookings — all within an elegant and responsive interface.
 
-First, run the development server:
+Hosted on **[Vercel](https://vercel.com)** 🚀  
 
+---
+
+## 📸 Preview
+
+> A beautifully designed booking platform built with **Next.js**, **TypeScript**, and **Tailwind CSS**, featuring a complete booking flow — from exploring experiences to confirmation.
+
+---
+
+## 🧩 Features
+
+### 🖥️ Frontend
+- Built with **Next.js 14 + TypeScript**
+- Styled using **Tailwind CSS** for a clean, responsive UI
+- Fully responsive across **desktop and mobile**
+- Smooth user journey:
+  - 🏠 Home Page — Explore travel experiences  
+  - 📄 Details Page — View details and available slots  
+  - 💳 Checkout Page — Enter details, apply promo code, and confirm booking  
+  - ✅ Confirmation Page — Display success or failure message
+- Form validation for name, email, and promo code
+- API data fetching using **Axios/Fetch**
+- State managed with **React Hooks**
+
+---
+
+### ⚙️ Backend
+- Powered by **Next.js API Routes (Node.js + Express-like environment)**
+- Integrated with **MongoDB** for storing experiences, slots, and bookings
+- API Endpoints:
+  - `GET /api/experience` → Fetch all experiences  
+  - `GET /api/experience/[id]` → Fetch single experience details  
+  - `POST /api/booking` → Create new booking  
+  - `POST /api/promo/validate` → Validate promo codes  
+- Prevents **double-booking** for same slot  
+- Handles all **validation and error states** gracefully  
+
+---
+
+## 🔄 Integration Flow
+
+The complete flow:
+Home → Details → Checkout → Confirmation
+
+yaml
+Copy code
+Data dynamically fetched and stored:
+- Experiences and slots from database  
+- Booking confirmation stored and displayed  
+
+---
+
+## 🧰 Tech Stack
+
+| Category | Technology |
+|-----------|-------------|
+| **Frontend** | Next.js 14, TypeScript, Tailwind CSS |
+| **Backend** | Node.js (Next.js API routes) |
+| **Database** | MongoDB |
+| **Deployment** | Vercel |
+| **Version Control** | Git + GitHub |
+
+---
+
+## 🚀 Installation & Setup
+
+
+### 1️⃣ Clone the Repository
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/yourusername/bookit.git
+cd bookit
 ```
+2️⃣ Install Dependencies
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+    bash
+    Copy code
+    npm install
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+``
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+3️⃣ Setup Environment Variables
 
-## Learn More
+    Create a .env file in the root directory:
+    
+    env
+    Copy code
+    DATABASE_URL=your_postgress_db_url
+    NEXT_PUBLIC_API_URL=http://localhost:3000
 
-To learn more about Next.js, take a look at the following resources:
+4️⃣ Run the Project
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+    bash
+    Copy code
+    npm run dev
+    Your app will be live at 👉 http://localhost:3000
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+🌐 Deployment
 
-## Deploy on Vercel
+    The project is hosted live on Vercel for seamless performance and zero-config deployment.
+    🔗 Live Link: https://bookit.vercel.app
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+🧮 Folder Structure
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+    bash
+    Copy code
+    .
+    ├── app/
+    │   ├── api/
+    │   │   ├── booking/
+    │   │   │   └── route.js
+    │   │   ├── experience/
+    │   │   │   ├── [id]/route.js
+    │   │   │   └── route.js
+    │   │   └── slot/[id]/route.js
+    │   ├── checkout/page.js
+    │   ├── confirmation/[id]/page.js
+    │   ├── Details/[id]/page.js
+    │   ├── _not-found/page.js
+    │   └── layout.js
+    ├── package.json
+    ├── tailwind.config.js
+    ├── tsconfig.json
+    ├── .env
+    └── README.md
+
+🎨 Design Reference
+
+    The UI closely follows the provided Figma Design for accurate responsiveness, color palette, and spacing.
+
+
+
+🧑‍💻 Developer
+Developed by:Paras Krishali
+Role: Fullstack Developer Intern
+Email: paraskrishali15@gmail.com
+
+
+🏁 Conclusion
+This project demonstrates an end-to-end full-stack booking system, showcasing:
+
+API integration
+
+Database management
+
+Clean and responsive UI/UX
+
+Real-world workflow from data fetching to confirmation
+
+Deployed with ❤️ on Vercel.
+
+yaml
+Copy code
+
