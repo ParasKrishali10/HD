@@ -56,7 +56,7 @@ async function main(){
     price: 120,
     rating: 4.6,
     reviewCount: 75,
-    image: './Kayaking.jpg',
+    image: './Kayaking1.jpg',
     category: 'Water Sports',
     duration: '2 hours',
     highlights: ['Peaceful lagoons', 'Wildlife spotting'],
@@ -152,8 +152,9 @@ async function main(){
 
   const today = new Date();
   const tomorrow = new Date();
+  const dayAfter=new Date()
   tomorrow.setDate(today.getDate() + 1);
-
+  dayAfter.setDate(today.getDate()+2)
   for (const exp of allExperiences) {
     slotsData.push(
       {
@@ -167,13 +168,59 @@ async function main(){
       },
       {
         experienceId: exp.id,
+        date: today,
+        startTime: '12:00 PM',
+        endTime: '15:00 AM',
+        totalSeats: 10,
+        availableSeats: 10,
+        price: exp.price,
+      },
+      {
+        experienceId: exp.id,
+        date: today,
+        startTime: '15:00 PM',
+        endTime: '18:00 PM',
+        totalSeats: 10,
+        availableSeats: 10,
+        price: exp.price,
+      },
+      {
+        experienceId: exp.id,
         date: tomorrow,
-        startTime: '02:00 PM',
-        endTime: '05:00 PM',
+        startTime: '14:00 PM',
+        endTime: '17:00 PM',
         totalSeats: 8,
         availableSeats: 8,
         price: exp.price,
-      }
+      },
+      {
+        experienceId: exp.id,
+        date: tomorrow,
+        startTime: '08:00 AM',
+        endTime: '11:00 AM',
+        totalSeats: 8,
+        availableSeats: 2,
+        price: exp.price,
+      },
+      {
+        experienceId: exp.id,
+        date: tomorrow,
+        startTime: '11:00 AM',
+        endTime: '14:00 PM',
+        totalSeats: 8,
+        availableSeats: 5,
+        price: exp.price,
+      },
+      {
+        experienceId: exp.id,
+        date: dayAfter,
+        startTime: '11:00 AM',
+        endTime: '14:00 PM',
+        totalSeats: 8,
+        availableSeats: 2,
+        price: exp.price,
+      },
+
     );
   }
 

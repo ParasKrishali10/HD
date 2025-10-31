@@ -16,7 +16,7 @@ export async function POST(req:Request,res:Response)
 {
     try{
        const {experienceId,slotId,firstName,lastName,email,phone,numberOfSeats,promoCode} =await req.json();
-        if (!experienceId || !slotId || !firstName || !lastName || !email || !phone || !numberOfSeats)
+        if (!experienceId || !slotId || !firstName  || !email || !phone || !numberOfSeats)
         {
             return NextResponse.json({error:"Missing Req Fields"},{status:400})
         }
@@ -30,7 +30,7 @@ export async function POST(req:Request,res:Response)
 
         if(slot.availableSeats<numberOfSeats)
         {
-            return NextResponse.json({error:`Only ${slot.availableSeats} are available`},{status:402})
+            return NextResponse.json({error:`Only ${slot.availableSeats} seats are available`},{status:402})
         }
 
         const totalPrice=slot.price*numberOfSeats;
@@ -76,7 +76,7 @@ export async function POST(req:Request,res:Response)
           experienceId,
           slotId,
           firstName,
-          lastName,
+          lastName  ,
           email,
           phone,
           numberOfSeats,

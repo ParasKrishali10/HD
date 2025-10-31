@@ -10,7 +10,8 @@ export async function GET(req:Request, { params }: { params: { id: string } }){
         const experience=await prisma.experience.findUnique({
             where:{
                 id
-            }
+            },
+             include: { slots: true },
         })
         return NextResponse.json(experience,{status:200})
     }catch(error)

@@ -1,11 +1,13 @@
+
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Inter } from 'next/font/google'
 import { SearchProvider } from "./context/SearchContext";
+import { ToastContainer} from "react-toastify"
 const inter = Inter({
   subsets: ['latin'],
-  weight: ['400', '600', '700'],
+  weight: ['400','500', '600', '700'],
 })
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,12 +31,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={inter.className}>
         <SearchProvider>
 
         {children}
+          <ToastContainer
+          position="top-right"
+          autoClose={3000}
+          hideProgressBar={false}
+          theme="colored"
+        />
         </SearchProvider>
       </body>
     </html>

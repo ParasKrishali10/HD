@@ -54,7 +54,7 @@ model Booking {
   experienceId String
   slotId       String
   firstName    String
-  lastName     String
+  lastName     String?
   email        String
   phone        String
   numberOfSeats Int
