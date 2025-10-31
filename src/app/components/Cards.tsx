@@ -34,7 +34,7 @@ export default function Cards(){
         const fetchExperience=async ()=>{
             try{
                 setLoading(true);
-                const res=await axios.get("http://localhost:3000/api/experience")
+                const res=await axios.get("/api/experience")
                 setExp(res.data);
             }catch(error)
             {

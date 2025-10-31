@@ -48,7 +48,7 @@ export default function Details() {
     const fetchExp = async () => {
       try {
         setLoading(true);
-        const res = await axios.get(`http://localhost:3000/api/experience/${id}`);
+        const res = await axios.get(`/api/experience/${id}`);
         setExp(res.data);
       } catch (error) {
         toast.error("Failed to fetch");
