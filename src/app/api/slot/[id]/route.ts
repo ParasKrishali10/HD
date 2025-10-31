@@ -3,7 +3,7 @@ import prisma from "@/lib/prisma";
 
 export async function GET(req: Request, context: { params: Promise<{ id: string }> }) {
   try {
-    const { id } = await context.params; // ✅ unwrap params correctly
+    const { id } = await context.params;
 
     const slot = await prisma.slot.findUnique({
       where: { id },

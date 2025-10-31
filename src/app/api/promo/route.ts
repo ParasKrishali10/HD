@@ -1,7 +1,7 @@
 import prisma from "@/lib/prisma";
 import { NextResponse } from "next/server";
 
-export async function POST(req:Request,res:Response){
+export async function POST(req:Request){
     try{
           const { code, discountType, discountValue, expiryDate, isActive } = await req.json();
           if(!code || !discountType || !discountValue)

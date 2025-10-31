@@ -12,7 +12,7 @@ export async function GET() {
   }
 }
 
-export async function POST(req:Request,res:Response){
+export async function POST(req:Request){
     try{
            const {
       title,
